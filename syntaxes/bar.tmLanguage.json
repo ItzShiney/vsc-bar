@@ -22,6 +22,9 @@
 					"include": "#keywords"
 				},
 				{
+					"include": "#constants"
+				},
+				{
 					"include": "#strings"
 				},
 				{
@@ -81,6 +84,14 @@
 				{
 					"name": "keyword.control.bar",
 					"match": "\\b(ret|retif|retifn|go|goif|goifn|if|ifn)\\b"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language.bar",
+					"match": "\\b(true|false|none)\\b"
 				}
 			]
 		},
