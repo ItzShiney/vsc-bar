@@ -1,0 +1,126 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Bar",
+	"patterns": [
+		{
+			"include": "#expression"
+		}
+	],
+	"repository": {
+		"expression": {
+			"patterns": [
+				{
+					"include": "#linecomment"
+				},
+				{
+					"include": "#brackets"
+				},
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#numbers"
+				},
+				{
+					"include": "#globalvariables"
+				},
+				{
+					"include": "#functions"
+				},
+				{
+					"include": "#labels"
+				},
+				{
+					"include": "#variables"
+				}
+			]
+		},
+		"linecomment": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.bar",
+					"match": "#.*$"
+				}
+			]
+		},
+		"brackets": {
+			"begin": "\\(",
+			"end": "\\)",
+			"beginCaptures": {
+				"0": { "name": "brackets.open.bar" }
+			},
+			"endCaptures": {
+				"0": { "name": "brackets.close.bar" }
+			},
+			"name": "expression.group.bar",
+			"patterns": [
+				{
+					 "include": "#expression"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.bar",
+					"match": "\\b(ret|retif|retifn|go|goif|goifn|if|ifn)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.bar",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.bar",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.bar",
+					"match": "([0-9]+(?:\\.[0-9]+)?([eE][+-]?[1-9][0-9]*)?)"
+				}
+			]
+		},
+		"globalvariables": {
+			"patterns": [
+				{
+					"name": "entity.name.type.class",
+					"match": "[@'][a-zA-Z\\-][a-zA-Z\\-0-9]*|[A-Z][a-zA-Z\\-0-9]*"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.bar",
+					"match": "[a-zA-Z\\-][a-zA-Z\\-0-9]*(?=\\s*\\()"
+				}
+			]
+		},
+		"labels": {
+			"patterns": [
+				{
+					"name": "label.bar",
+					"match": "(?<=:|(?:go|goif|goifn|run)\\s)\\s*([a-zA-Z\\-][a-zA-Z\\-0-9]*)"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.parameter.bar",
+					"match": "[a-zA-Z\\-][a-zA-Z\\-0-9]*"
+				}
+			]
+		}
+	},
+	"scopeName": "source.bar"
+}
