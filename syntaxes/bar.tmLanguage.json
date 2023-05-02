@@ -10,6 +10,9 @@
 		"expression": {
 			"patterns": [
 				{
+					"include": "#blockcomment"
+				},
+				{
 					"include": "#linecomment"
 				},
 				{
@@ -38,11 +41,22 @@
 				}
 			]
 		},
+		"blockcomment": {
+			"begin": "/\\*",
+			"end": "\\*/",
+			"beginCaptures": {
+				"0": { "name": "comment.block.open.bar" }
+			},
+			"endCaptures": {
+				"0": { "name": "comment.block.close.bar" }
+			},
+			"name": "comment.block.bar"
+		},
 		"linecomment": {
 			"patterns": [
 				{
-					"name": "comment.line.number-sign.bar",
-					"match": "#.*$"
+					"name": "comment.line.double-slash.bar",
+					"match": "//.*$"
 				}
 			]
 		},
