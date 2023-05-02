@@ -19,6 +19,9 @@
 					"include": "#brackets"
 				},
 				{
+					"include": "#labels"
+				},
+				{
 					"include": "#keywords"
 				},
 				{
@@ -35,9 +38,6 @@
 				},
 				{
 					"include": "#functions"
-				},
-				{
-					"include": "#labels"
 				},
 				{
 					"include": "#variables"
@@ -75,7 +75,7 @@
 			"name": "expression.group.bar",
 			"patterns": [
 				{
-					 "include": "#expression"
+					"include": "#expression"
 				}
 			]
 		},
@@ -83,7 +83,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.bar",
-					"match": "\\b(ret|retif|retifn|go|goif|goifn|if|ifn)\\b"
+					"match": "(?<![a-z\\-0-9])(ret|retif|retifn|go|goif|goifn|if|ifn)(?![a-z\\-0-9])"
 				}
 			]
 		},
