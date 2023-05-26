@@ -22,16 +22,16 @@
 					"include": "#labels"
 				},
 				{
-					"include": "#keywords"
+					"include": "#numbers"
 				},
 				{
 					"include": "#constants"
 				},
 				{
-					"include": "#strings"
+					"include": "#keywords"
 				},
 				{
-					"include": "#numbers"
+					"include": "#strings"
 				},
 				{
 					"include": "#globalvariables"
@@ -91,7 +91,7 @@
 			"patterns": [
 				{
 					"name": "constant.language.bar",
-					"match": "\\b(true|false|none)\\b"
+					"match": "\\b(true|false|none|nan|inf)\\b|(-inf)\\b"
 				}
 			]
 		},
