@@ -37,6 +37,12 @@
 					"include": "#globalvariables"
 				},
 				{
+					"include": "#interfaces"
+				},
+				{
+					"include": "#types"
+				},
+				{
 					"include": "#functions"
 				},
 				{
@@ -91,7 +97,7 @@
 			"patterns": [
 				{
 					"name": "constant.language.bar",
-					"match": "\\b(true|false|none|nan|inf)\\b|(-inf)\\b"
+					"match": "\\b(true|false|none|nan|inf|this)\\b|(-inf)\\b"
 				}
 			]
 		},
@@ -118,7 +124,23 @@
 			"patterns": [
 				{
 					"name": "entity.name.type.class",
-					"match": "[@'][a-zA-Z\\-][a-zA-Z\\-0-9]*|[A-Z][a-zA-Z\\-0-9]*"
+					"match": "[@'][a-zA-Z\\-][a-zA-Z\\-0-9]*"
+				}
+			]
+		},
+		"interfaces": {
+			"patterns": [
+				{
+					"name": "entity.name.type.class",
+					"match": "[A-Z][a-zA-Z\\-0-9]*"
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "entity.name.type.class",
+					"match": "(?<=\\[[^\\]]*)[a-zA-Z\\-][a-zA-Z\\-0-9]*|[a-zA-Z\\-][a-zA-Z\\-0-9]*(?>[^\\[]*\\])"
 				}
 			]
 		},
@@ -126,7 +148,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.function.bar",
-					"match": "[a-zA-Z\\-][a-zA-Z\\-0-9]*(?=\\s*[\\(\\[])"
+					"match": "[a-zA-Z\\-][a-zA-Z\\-0-9]*(?=\\s*(?:\\[[^\\]]*\\])?\\()"
 				}
 			]
 		},
