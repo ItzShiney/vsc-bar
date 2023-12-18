@@ -83,7 +83,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.bar",
-					"match": "(?<![a-z\\-0-9])(ret|retif|retifn|go|goif|goifn|if|ifn)(?![a-z\\-0-9])"
+					"match": "(?<![a-z\\-0-9])(ret|retif|retifn|go|goif|goifn|if|ifn|tag)(?![a-z\\-0-9])"
 				}
 			]
 		},
@@ -126,7 +126,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.function.bar",
-					"match": "[a-zA-Z\\-][a-zA-Z\\-0-9]*(?=\\s*\\()"
+					"match": "[a-zA-Z\\-][a-zA-Z\\-0-9]*(?=\\s*[\\(\\[])"
 				}
 			]
 		},
@@ -134,7 +134,7 @@
 			"patterns": [
 				{
 					"name": "label.bar",
-					"match": "(?<=:|(?:go|goif|goifn|run)\\s)\\s*([a-zA-Z\\-][a-zA-Z\\-0-9]*)"
+					"match": "(?<=:|(?:go|goif|goifn|tag)\\s)\\s*([a-zA-Z\\-][a-zA-Z\\-0-9]*)"
 				}
 			]
 		},
